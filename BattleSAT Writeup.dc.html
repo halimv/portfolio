@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#ffffff;color:#181818;font-family:Inter,system-ui,sans-serif}
+a{color:#D6291D;text-decoration:none}
+a:hover{color:#a3160d;text-decoration:underline}
+</style>
+</helmet>
+
+<div style="max-width: 820px; margin: 0 auto; padding: 0 clamp(20px,5vw,56px) 80px; background-color: #ffffff">
+
+  <nav style="display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid #e4e4e4;margin-bottom:44px">
+    <a href="Portfolio - Vania Halim.dc.html" style="font:600 12px ui-monospace,monospace;color:#666">← back to portfolio</a>
+    <div style="font:600 13px ui-monospace,monospace;color:#181818">vania_halim<span style="color: #8B5890">.portfolio</span></div>
+  </nav>
+
+  <div style="font: 500 11px ui-monospace,monospace; color: #8B5890; margin-bottom: 14px">/* project writeup */</div>
+
+  <h1 style="font:800 34px/1.2 Inter,sans-serif;margin:0 0 10px;letter-spacing:-.02em">Playing Battleship in an imperfect world</h1>
+  <p style="font:400 14px/1.6 ui-monospace,monospace;color:#999;margin:0 0 32px"><span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: medium;">What happens when an automated system misinterprets its own feedback loop? Here I explore the use of SAT solvers to recover ground truth from experimental uncertainty. &nbsp;</span><br></p>
+
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;font:500 11px ui-monospace,monospace;color:#666">
+    <span style="padding:5px 11px;background:#f5f5f5;border-radius:3px">z3 / maxsat</span>
+    <span style="padding:5px 11px;background:#f5f5f5;border-radius:3px">python</span>
+    <span style="padding:5px 11px;background:#f5f5f5;border-radius:3px">streamlit</span>
+    <span style="padding:5px 11px;background:#f5f5f5;border-radius:3px">constraint solving</span>
+    <span style="padding:5px 11px;background:#f5f5f5;border-radius:3px">robotics</span>
+  </div>
+
+  
+
+  <img src="uploads/battlesat_game_88320-7d2925be.gif" style="width:50%;max-width:100%;border:1px solid #e4e4e4;border-radius:8px;display:block;margin:0 auto 32px auto" alt="Before error recovery: isolated hit in water"><div style="margin-bottom:24px;display:flex;flex-direction:column;align-items:center">
+    
+    <div style="font: 400 11px ui-monospace,monospace; color: #999; max-width: 583px; text-align: center">Simulation of automated Battleship played on a standard 96-well plate with pH-sensitive reagents. Features configurable parameters for optical noise and sampling error rates to test model robustness. Run shown: 10% error rate, 50% RGB signal noise</div>
+  </div><section style="margin-bottom:44px">
+    <div style="font: 600 18px Inter,sans-serif; color: #8B5890; margin-bottom: 12px">01 — the problem</div>
+    
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px">Seeing the closed-loop system run autonomously on the OT-2 for the first time was exciting, until an RGB sampling error misclassified a water position as a hit. I could only watch as the rest of the run devolved into tragic futility, the simple error compounding across remaining steps.</p>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0"><span style="font: 400 15px/1.75 Inter,sans-serif; color: #333; margin: 0 0 14px">At around the same time, I was exploring the use of SAT solvers for sequence design. It occurred to me that as humans, we naturally infer that an isolated "hit" completely surrounded by water is probably a misclassification. What if we could use logical constraints derived from the rules of battleship to detect these discrepancies and dynamically correct the belief map?</span><br></p>
+  </section>
+
+  <section style="margin-bottom:44px">
+    <div style="font: 600 18px Inter,sans-serif; color: #8B5890; margin-bottom: 12px">02 — the setup</div>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px">In a previous project, I worked with a team to play battleship autonomously on a liquid handler. In both that project and this simulation, we treat&nbsp;a 96-well plate as a battleship board, where each query returns an RGB reading. A confidence classifier converts this optical signal into a hit or miss verdict. But the original version only included either hits or misses and treated the results as reliable, while this one does not take for granted the reliability.&nbsp;</p>
+    <p style="font: 400 15px/1.75 Inter,sans-serif; color: #333; margin: 0 0 14px">To stress-test how SAT solvers degrade under realistic conditions, we introduce two configurable error sources: oracle errors (contaminated wells reporting wrong results at 0–20% rates) and sensor noise (Gaussian noise on RGB channels from 0–60 std dev), which affects the confidence scores the classifier receives. Instead of maintaining a Bayesian belief map, we employ a simple Hunt-Target heuristic which displayed a similar performance in another project simulation.&nbsp;<br></p>
+  </section>
+
+  <section style="margin-bottom:44px">
+    <div style="font: 600 18px Inter,sans-serif; color: #8B5890; margin-bottom: 12px">03 — detecting and correcting errors</div>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px">We implemented two validation modes. <b><span style="font-weight: normal;">SAT mode</span></b> runs reactively: after accumulating observations, it checks whether the board satisfies battleship constraints. If an UNSAT condition surfaces, such as a lone hit surrounded by water, or overlapping ships, the solver repairs the board by flipping the conflicting bits. It's fast but can miss errors that don't trigger a hard contradiction.</p>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0"><b><span style="font-weight: normal;">Dynamic mode</span></b> takes a more aggressive approach, maintaining a persistent MaxSAT solver that refines a best-guess board after every single query. We catch errors faster, but computation time is extremely slow - often intractable.</p>
+    
+    
+    
+  </section><section style="margin-bottom:44px" data-om-label="making it interactive">
+    <div style="color: #8B5890; margin-bottom: 12px; font: 600 18px Inter,sans-serif">06 - let's play!</div>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0">A Streamlit app wraps the simulation, letting you configure oracle error rates, noise levels, move strategies, and validation modes, then watch the algorithm play in real-time. As each query executes, you see the board state update, the solver's repair log unfold, and the belief map converge. You can pause, inspect why a particular choice was made, and understand exactly when and why the model recovers from errors.</p><div style="display: flex; gap: 16px; margin: 20px 0 14px; margin-top: 20px">
+      <div style="width:calc(50% - 8px);aspect-ratio:710/490">
+        <image-slot id="error-detection-before" shape="rounded" style="width: 100%; height: 100%" placeholder="Before error recovery: isolated hit in water" src="./battlesat_game_88320_fixed-25-dragged--mu5zvs5v-jh24.png"></image-slot>
+      </div>
+      <div style="width:calc(50% - 8px);aspect-ratio:710/490">
+        <image-slot id="error-detection-after" shape="rounded" style="width: 100%; height: 100%" placeholder="After solver repair: conflicting observations resolved" src="./battlesat_game_88320-55-dragged--mu5zocub-kwbh.png"></image-slot>
+      </div>
+    </div><p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0">In the images above, we see that by some intermediate step in the simulation, Wells F4, H5, and H9 are misidentified as hits, and E10 is misidentified as a miss. At a later step, the MaxSAT audit is triggered and the board is recovered to almost ground truth, with the exception of E10.&nbsp;<br></p>
+  </section>
+
+  <section style="margin-bottom:44px">
+    <div style="font: 600 18px Inter,sans-serif; color: #8B5890; margin-bottom: 12px">05 — it's not that easy<br></div>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px">The two images below show the end state of the simulation. The left picture shows the color of each well as determined by the camera and computer vision model, accompanied by an uncertainty value ranging from 0 to 1. The image on the right shows the model's current belief of the board state. Even though earlier we saw multiple errors, by the end of the simulation we were able to recover the ground truth.&nbsp;<br></p><div style="display:flex;gap:16px;margin-top:20px">
+      <div style="width:calc(50% - 8px);aspect-ratio:710/490">
+        <image-slot id="error-detection-before-2" shape="rounded" style="width: 100%; height: 100%" placeholder="Before error recovery: isolated hit in water"></image-slot>
+      </div>
+      <div style="width:calc(50% - 8px);aspect-ratio:710/490">
+        <image-slot id="error-detection-after-2" shape="rounded" style="width: 100%; height: 100%" placeholder="After solver repair: conflicting observations resolved"></image-slot>
+      </div>
+    </div>
+    <p style="font: 400 15px/1.75 Inter,sans-serif; color: #333">For reasonably small error rates, we're able to recover the board as shown above. But at higher error rates, MaxSAT literally grinds to a halt as it is unable to find a satisfactory board combination. The good news is that the dynamic solver shows measurable promise. Where naive board tracking plateaus early under contamination, continuous MaxSAT refinement extends the accuracy plateau and enables recovery from mid-game errors. This gives us a real-world-applicable testbed for understanding how SAT solvers behave when the problem itself is uncertain.</p>
+  </section>
+
+  
+
+  
+
+  <div style="display:flex;gap:20px;align-items:center;padding-top:20px;border-top:1px solid #e4e4e4;font:600 12px ui-monospace,monospace">
+    <a href="https://github.com/CMU-PRISM-LAB/BattleSAT" style="color:#181818"><u>github: BattleSAT ↗</u></a>
+    <a href="https://compeau.cbd.cmu.edu/teaching-experience/fundamentals-of-bioinformatics/" style="color:#181818"></a>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

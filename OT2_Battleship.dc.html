@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#ffffff;color:#181818;font-family:Inter,system-ui,sans-serif}
+a{color:#D6291D;text-decoration:none}
+a:hover{color:#a3160d;text-decoration:underline}
+</style>
+</helmet>
+
+<div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,5vw,56px) 80px">
+
+  <nav style="display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid #e4e4e4;margin-bottom:44px">
+    <a href="Portfolio - Vania Halim.dc.html" style="font:600 12px ui-monospace,monospace;color:#666">← back to portfolio</a>
+    <div style="font:600 13px ui-monospace,monospace;color:#181818">vania_halim<span style="color: #8B5890">.portfolio</span></div>
+  </nav>
+
+  <div style="font: 500 11px ui-monospace,monospace; color: #8B5890; margin-bottom: 14px">/* project writeup */</div>
+
+  <h1 style="font:800 34px/1.2 Inter,sans-serif;margin:0 0 10px;letter-spacing:-.02em">A fully closed-loop, automated game of Battleship</h1>
+  <p style="color: rgb(0, 0, 0); font: 400 14px/1.6 ui-monospace,monospace; caret-color: rgb(0, 0, 0); font-size: medium">How can we give a robot everything it needs to play Battleship with itself? And why would we want to?&nbsp;<br></p><p style="color: #8B5890; font: 400 14px/1.6 ui-monospace,monospace; caret-color: rgb(0, 0, 0); font-size: small">In collaboration with Ashwath Raghuram, Baiding Chen, Jeffrey Yang</p>
+
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;font:500 11px ui-monospace,monospace;color:#666">
+    <span style="padding:5px 11px;background:#f5f5f5;border-radius:3px">python</span>
+    <span style="padding:5px 11px;background:#f5f5f5;border-radius:3px">opentrons</span>
+    <span style="padding:5px 11px;background:#f5f5f5;border-radius:3px">http</span>
+    <span style="padding:5px 11px;background:#f5f5f5;border-radius:3px">closed-loop systems</span>
+    
+    
+  </div>
+
+  <div style="margin-bottom:24px">
+    <img style="width: 50%; border-radius: 8px; border: 1px solid #e4e4e4; display: block; max-width: 100%; margin: 0 auto 32px auto" src="assets/battleship-demo.gif" alt="Before error recovery: isolated hit in water">
+    
+  </div><div style="margin-bottom:24px;display:flex;flex-direction:column;align-items:center">
+    
+    <div style="font: 400 11px ui-monospace,monospace; color: #8B5890; max-width: 583px; text-align: center; font-family: Inter; font-size: 13px; width: 649px; height: 87px">In the middle of the game, an OT-2 dispenses cabbage juice into a selected well. In the following steps, a camera will take a picture after waiting for a color change to occur. The picture is sent to a computer which samples pixels from the selected well to determine whether the position is a hit/miss and chooses the next step based on the outcome of the previous step.</div>
+  </div>
+
+  <section style="margin-bottom:44px">
+    <div style="font: 600 18px Inter,sans-serif; color: #8B5890; margin-bottom: 12px">01 - closing the loop</div>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px"><span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: medium;">Automating modern science requires moving beyond simple mechanical execution. Transferring a manual assay onto a liquid handler speeds up pipetting, but it leaves the core bottleneck intact. To truly advance scientific discovery, we must design systems that close the loop between the conclusion of one experiment and the initiation of the next.</span><br></p>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px"><span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: medium;">Traditionally, a human scientist analyzes data, forms a new hypothesis, and designs the subsequent experiment to test it. True laboratory automation requires embedding that iterative reasoning directly into the system, enabling machines to continuously analyze outcomes and autonomously drive the next step of an investigation.</span></p>
+  </section><section style="margin-bottom:44px">
+    <div style="font: 600 18px Inter,sans-serif; color: #8B5890; margin-bottom: 12px">02 - what does it have to do with biology?</div>
+    
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px"></p><p style="color: #000000; font: 400 15px/1.75 Inter,sans-serif; margin: 0 0 14px"><span style="font-size: medium;">While Battleship serves as a simplified proof of concept, this closed-loop architecture demonstrates how similar frameworks could potentially transform real-world biological workflows. Rather than target coordinates on a game board, future iterations of this system could evaluate chemical analogs in active-learning drug screens, using live optical readouts to dynamically select and dilute promising compounds instead of running static, multi-thousand-compound libraries. The same iterative logic could theoretically be applied to directed evolution or adaptive media optimization, where an algorithm acts on live pH shifts or cell density measurements to selectively propagate high-performing protein variants or adjust feeding schedules on the fly. By using the game as a functional proxy, the framework illustrates how AI-driven decision engines might one day autonomously steer high-throughput biological experimentation to shorten cycle times and conserve expensive reagents.</span><br></p>
+  </section>
+
+  <section style="margin-bottom:36px">
+    <div style="font: 600 18px Inter,sans-serif; color: #8B5890; margin-bottom: 12px">03 - art imitates life</div>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 20px"><span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: medium;">Evaluating closed-loop frameworks requires a controlled, reproducible testing ground, and the game Battleship provides an ideal proxy for the scientific method. The gameplay directly mirrors the research process: formulating a hypothesis (selecting a target coordinate), running an experiment (taking a shot), analyzing the outcome (observing a hit or miss), and designing the next test based on previous data.</span><br></p><p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 20px"><span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: medium;">By adapting the standard game board to a 96-well plate format, the setup translates game mechanics into chemical and optical signals. Using pH-sensitive reagents, board state changes can be captured by a camera, converted into usable data, and fed into an algorithmic decision loop.<br></span></p>
+  </section>
+
+  <section style="margin-bottom:44px">
+    <div style="font: 600 18px Inter,sans-serif; color: #8B5890; margin-bottom: 12px">04 — the closed-loop system architecture</div>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px"><span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: medium;">Standard industry liquid handlers are often proprietary and difficult to integrate with external software. The affordable Opentrons OT-2 provides a flexible platform for testing custom, programmatic control.</span><br></p>
+    <p style="color: rgb(0, 0, 0); caret-color: rgb(0, 0, 0); font-size: medium"><span style="color: rgb(0, 0, 0); caret-color: rgb(0, 0, 0); font-size: medium">The system relies on chemical indicators, computer vision, and programmatic decision-making executed within a Jupyter Notebook environment:</span></p><div style="display: grid; gap: 16px; margin-top: 20px">
+      
+      
+    <image-slot id="fig3-leiden" shape="rounded" fit="contain" style="width: 563px; aspect-ratio: 16/9; border: 1px solid #e4e4e4; height: 230px; margin: 0 auto; border-radius: 8px; border-width: 0px" placeholder="Fig. 3 — Go vs. Seurat Leiden clustering"></image-slot></div><p></p><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px">
+      
+      
+    </div><br><p></p><div style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0"><li style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);"><p data-path-to-node="10,0,0"><b data-path-to-node="10,0,0" data-index-in-node="0">Board Initialization:</b>&nbsp;An 8x12 grid is randomly populated with ships following standard game rules. Hidden ship coordinates are filled with sodium hydroxide (NaOH), while empty coordinates contain pure water. Both liquids remain visually identical prior to targeting.</p></li><li style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);"><p data-path-to-node="10,1,0"><b data-path-to-node="10,1,0" data-index-in-node="0">Targeting &amp; Execution:</b>&nbsp;The Python Opentrons API directs the robot to dispense a purple cabbage juice indicator into the target well.</p></li><li style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);"><p data-path-to-node="10,2,0"><b data-path-to-node="10,2,0" data-index-in-node="0">Detection &amp; Vision Analysis:</b>&nbsp;A camera mounted above the workspace captures an image of the plate. The script samples RGB values from the target well to identify color shifts caused by the pH reaction, outputting a hit or miss determination alongside an uncertainty score.</p></li><li style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);"><p data-path-to-node="10,3,0"><b data-path-to-node="10,3,0" data-index-in-node="0">Algorithmic Decision Engine:</b>&nbsp;The result feeds directly into a hunt-target heuristic algorithm. Hits trigger exploration of adjacent spaces (von Neumann neighborhood), while misses fall back to a checkerboard sweep pattern to maximize board coverage.</p></li>
+</div>
+  </section><section style="margin-bottom:44px">
+    <div style="font: 600 18px Inter,sans-serif; color: #8B5890; margin-bottom: 12px">06 — time to play</div>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px"><span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: medium;">The two images below show the execution of the protocol and what the plate looks like at the end. Water ships are purple, and pink wells are the hidden ships.&nbsp;<br></span></p>
+<p></p><p></p><div style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 16px; margin-top: 24px; margin-bottom: 24px"><image-slot id="arch-left" shape="rounded" fit="contain" style="width: 100%; aspect-ratio: 4/3; border: 1px solid #e4e4e4; border-width: 0px" placeholder="Image 1"></image-slot><image-slot id="arch-right" shape="rounded" fit="contain" style="width: 100%; aspect-ratio: 4/3; border: 1px solid #e4e4e4; border-width: 0px" placeholder="Image 2" src="uploads/2.png"></image-slot></div><div style="margin-bottom:24px;display:flex;flex-direction:column;align-items:center">
+    
+    <div style="font: 400 11px ui-monospace,monospace; color: #8B5890; text-align: center; font-family: Inter; font-size: 13px; width: 659px; height: 80px">A plate at the end of the image showing the solved game. All ship positions were found, but note the error in well D5. This led to the board being exhaustively searched. In our best-performing runs, many cells were left unqueried by the time all ships were found.&nbsp;</div>
+  </div>
+    
+  </section>
+
+  <section style="margin-bottom:44px">
+    <div style="font: 600 18px Inter,sans-serif; color: #8B5890; margin-bottom: 12px">05 — what's next? recovering ground truth from incorrect calls</div><span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: medium;"><p style="color: #000000; font: 400 15px/1.75 Inter,sans-serif; margin: 0 0 14px">This system works great when we can assume all the calls are correct, but what if we can't? This is the question I ran into when I watched an early misclassification derailed the rest of the game, preventing the script from making good future calls.&nbsp;</p><p style="color: #000000; font: 400 15px/1.75 Inter,sans-serif; margin: 0 0 14px">Driven by this limitation, I started to explore symbolic logic solutions to improve error recovery. By modeling the governing rules of the game board as strict logical constraints, Z3 can continuously validate real-time optical observations against permitted board configurations. When a vision miscall triggers an impossibility, the solver detects the contradiction, isolates the erroneous data point, and prompts a re-sampling step to restore true ground state. This ongoing work aims to build closed-loop lab automation systems capable of self-correcting when exposed to imperfect physical sensors.</p><p style="color: #000000; font: 400 15px/1.75 Inter,sans-serif; margin: 0 0 14px">If you are interested in an overview of this exploratory constraint-based framework, read the <a href="BattleSAT Writeup.dc.html" style="color: rgb(139, 88, 144);">writeup</a>.</p></span>
+    
+    
+  </section><section style="margin-bottom:44px">
+    <div style="font: 600 18px Inter,sans-serif; color: #8B5890; margin-bottom: 12px">06 — code&nbsp;</div>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px"><span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-size: medium;">All code is available on <a href="https://github.com/shellwork/BaiTu" style="color: rgb(139, 88, 144);">GitHub</a>.&nbsp;<br></span></p>
+<p></p><p></p>
+    
+  </section>
+
+  <section style="margin-bottom:44px">
+    
+    
+    
+  </section>
+
+  
+
+  
+
+  
+
+  <div style="display:flex;gap:20px;align-items:center;padding-top:20px;border-top:1px solid #e4e4e4;font:600 12px ui-monospace,monospace">
+    <a href="Portfolio - Vania Halim.dc.html#" style="color:#181818"><u>back to portfolio&nbsp;<u style="outline-width: medium !important; outline-style: none !important; animation-duration: auto !important; animation-fill-mode: none !important;">↗</u></u></a>
+    <a href="https://compeau.cbd.cmu.edu/teaching-experience/fundamentals-of-bioinformatics/" style="color:#181818"></a>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

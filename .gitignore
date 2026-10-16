@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+.env
+.env.local
+*.log
+screenshots/
+*.state.json
+.thumbnail
+Portfolio Templates.dc.html
+battlesat_game_*.png
+battlesat_game_*.gif
+error_*.png
+error_*.gif
+pasted-*.png

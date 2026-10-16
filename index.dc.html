@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600;700;800&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+@keyframes doke-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes sclider-fade-0{0%{opacity:1}17.5%{opacity:1}20%{opacity:0}100%{opacity:0}}
+@keyframes sclider-fade-1{0%{opacity:0}20%{opacity:0}22.5%{opacity:1}37.5%{opacity:1}40%{opacity:0}100%{opacity:0}}
+@keyframes sclider-fade-2{0%{opacity:0}40%{opacity:0}42.5%{opacity:1}57.5%{opacity:1}60%{opacity:0}100%{opacity:0}}
+@keyframes sclider-fade-3{0%{opacity:0}60%{opacity:0}62.5%{opacity:1}77.5%{opacity:1}80%{opacity:0}100%{opacity:0}}
+@keyframes sclider-fade-4{0%{opacity:0}80%{opacity:0}82.5%{opacity:1}97.5%{opacity:1}100%{opacity:0}}
+.doke-marquee-track:hover{animation-play-state:paused}
+body{margin:0;color:#2c2c2c;font-family:'Lora',serif;min-height:100vh}
+a{color:#8a7a8f;text-decoration:none}
+a:hover{color:#6b5b70;text-decoration:underline}
+html{background:linear-gradient(180deg,#CDCAE0,#FFF4E3);background-attachment:fixed;min-height:100%}
+</style>
+</helmet>
+
+<div style="max-width: 1180px; margin: 0 auto; padding: 0 clamp(20px,5vw,56px)">
+
+
+
+<nav style="display: flex; align-items: center; justify-content: space-between; padding: 70px 0 22px; border-bottom: 1px solid #e4e4e4; flex-wrap: wrap; gap: 12px; color: #464438; border-color: #B6A7B8">
+  
+  <div style="font: 600 15px ui-monospace,monospace; color: #000000">vania <span style="color: rgb(139, 88, 144);">like pennsylvania</span></div><div style="display:flex;gap:24px;font:500 12px ui-monospace,monospace;color:#9b7b9e;flex-wrap:wrap">
+    <a href="#about" style="color: #000000">01.about</a>
+    
+    <a href="#projects" style="color: #000000">02.projects</a>
+    <a href="#communication" style="color: #000000">03.communication</a>
+    
+    
+  </div>
+</nav><div style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 56px; align-items: start; padding: 40px 0 0">
+  <div id="about" style="scroll-margin-top: 20px">
+    <div style="display:flex;align-items:center;gap:20px;margin-bottom:24px">
+      <div style="width: 140px; height: 135px; border-radius: 8px; flex: none; background-image: url('assets/headshot.jpeg'); background-size: cover; background-position: center; border: 1px solid #ece8e0"></div>
+      <div>
+        <div style="font: 600 20px Inter,sans-serif; color: #000000">Vania Halim</div>
+        
+        <div style="font: 400 13px/1.6 Inter,sans-serif; color: #000000; margin: 10px 0 0; font-weight: 700">M.S. Automated Science (2027)<br>Carnegie Mellon University</div><div style="font:400 12.5px Inter,sans-serif;color:#9b7b9e;margin-top:4px"><span style="color: #8B5890; font: 400 13px/1.6 Inter,sans-serif; margin: 10px 0 0">B.S. Chemical Engineering, <i>summa cum laude</i>&nbsp;<br>Oregon State University</span><br></div>
+        <div style="display:flex;gap:14px;margin-top:8px;align-items:center">
+          <a href="https://github.com/halimv" style="color:#000;display:flex" aria-label="GitHub" title="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.11.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.21.67.79.55A10.51 10.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"></path></svg></a>
+          <a href="https://www.linkedin.com/in/vaniahalim/" rel="noopener noreferrer" target="_blank" style="color:#000;display:flex" aria-label="LinkedIn" title="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.68H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"></path></svg></a>
+          <a href="mailto:vania@andrew.cmu.edu" style="color:#000;display:flex" aria-label="Email" title="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 6-10 7L2 6"></path></svg></a>
+        </div>
+      </div>
+    </div>
+    
+    
+    <h1 style="font: 700 36px/1.18 Inter,sans-serif; margin: 0 0 18px; letter-spacing: -.02em; font-size: 20px; color: #4a4640">4 years of experience spanning biotech automation, workflow optimization, and computational biology. Passionate about automating science to reach more patients in time. Building tools for genomics, molecular biology, and sequence representation learning for biological design spaces.&nbsp;</h1><div style="margin-top:24px">
+      
+      <div style="display:flex;flex-wrap:wrap;gap:8px;font:500 12px ui-monospace,monospace;color:#9b7b9e">
+        <span style="padding: 5px 11px; border-radius: 3px; background-color: #CDAFD0; color: #4A4640">Python</span>
+        <span style="padding: 5px 11px; border-radius: 3px; background-color: #CDAFD0; color: #4A4640">R</span><span style="padding: 5px 11px; border-radius: 3px; background-color: #CDAFD0; color: #4A4640">Go<br></span><span style="padding: 5px 11px; border-radius: 3px; background-color: #D0D1A0; color: #4A4640">PyTorch</span>
+        <span style="padding: 5px 11px; border-radius: 3px; background-color: #D0D1A0; color: #4A4640">Scikit-learn</span><span style="padding: 5px 11px; border-radius: 3px; background-color: #D0D1A0; color: #4A4640">Seurat</span><span style="padding: 5px 11px; border-radius: 3px; background-color: #D0D1A0; color: #4A4640">Scanpy</span>
+        
+        <span style="padding: 5px 11px; border-radius: 3px; background-color: #ABCBD1; color: #4A4640">Hamilton Venus</span><span style="padding: 5px 11px; border-radius: 3px; background-color: #ABCBD1; color: #4A4640">Biomek</span><span style="padding: 5px 11px; border-radius: 3px; background-color: #ABCBD1; color: #4A4640">Agilent Bravo</span><span style="padding: 5px 11px; border-radius: 3px; background-color: #ABCBD1; color: #4A4640">Opentrons</span><span style="padding: 5px 11px; border-radius: 3px; background-color: #ABCBD1; color: #4A4640">CyBio</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="experience" style="scroll-margin-top: 20px">
+    <div style="font: 500 11px ui-monospace,monospace; color: #4A4640; margin-bottom: 18px">// experience</div>
+    <div style="position:relative;padding-left:28px;display:flex;flex-direction:column">
+      <div style="position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background-color: #4A46403F"></div>
+      <div style="position:relative;margin-bottom:24px">
+        <div style="position: absolute; left: -25px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background-color: #8B5890"></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+          <div style="display:flex;align-items:center;gap:10px;min-width:0">
+            <div>
+              <div style="font: 600 14px Inter,sans-serif; color: #000000">Graduate Research Assistant</div>
+              <div style="font: 500 12px ui-monospace,monospace; color: #4A4640; margin-top: 2px">Ray &amp; Stephanie Lane Comp. Bio Dept., Pittsburgh</div>
+            </div>
+          </div>
+          <div style="font: 500 11px ui-monospace,monospace; color: #4A4640; flex: none; width: 56px; text-align: right">current</div>
+        </div>
+        <p style="font: 400 13px/1.6 Inter,sans-serif; color: #8B5890; margin: 10px 0 0"><span style="color: #8B5890; font: 400 13px/1.6 Inter,sans-serif; margin: 10px 0 0">Constructing an exploratory genomic landscape using genomic foundation models and topological clustering, defining novel parts for a downstream SMT solver driving constraint-guided synthetic plasmid design.&nbsp;</span><span data-path-to-node="9,0,1" style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);"><sup _ngcontent-ng-c557919041="" class="superscript"></sup></span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c283327905="" style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0);"></sources-carousel-inline><br></p>
+      </div>
+      <div style="position:relative;margin-bottom:24px">
+        <div style="position: absolute; left: -25px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background-color: #ABABAB"></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+          <div style="display:flex;align-items:center;gap:10px;min-width:0">
+            <div>
+              <div style="font: 600 14px Inter,sans-serif; color: #000000">Automation Service Engineer</div>
+              <div style="font: 500 12px ui-monospace,monospace; color: #4A4640; margin-top: 2px">BillionToOne, Menlo Park</div>
+            </div>
+          </div>
+          <div style="font: 500 11px ui-monospace,monospace; color: #4A4640; flex: none; width: 56px; text-align: right">2 yrs</div>
+        </div>
+        <p style="font: 400 13px/1.6 Inter,sans-serif; color: #8B5890; margin: 10px 0 0">Programmed automated protocols for NGS prep and developed liquid classes for microfluidic transfers. Implemented long-term hardware and software fixes to reduce instrument downtime and assay repeat rates.</p>
+      </div>
+      <div style="position:relative">
+        <div style="position: absolute; left: -25px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background-color: #ABABAB"></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+          <div style="display:flex;align-items:center;gap:10px;min-width:0">
+            <div>
+              <div style="font: 600 14px Inter,sans-serif; color: #000000">Global Material Quality Intern</div>
+              <div style="font: 500 12px ui-monospace,monospace; color: #4A4640; margin-top: 2px">Genentech, South San Francisco</div>
+            </div>
+          </div>
+          <div style="font: 500 11px ui-monospace,monospace; color: #4A4640; flex: none; width: 56px; text-align: right">1 yr</div>
+        </div>
+        <p style="font: 400 13px/1.6 Inter,sans-serif; color: #8B5890; margin: 10px 0 0">Built an automated KPI data-collection system that eliminated manual entry errors for a 30-person global team. Qualified GMP materials and standardized handling across 5 global sites and departments.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="projects" style="padding: 48px 0; scroll-margin-top: 20px">
+  <div style="font:500 11px ui-monospace,monospace;color:#a9a9a0;margin-bottom:16px">/* featured */</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding: 32px; border: 1px solid #e4e4e4; border-radius: 8px; border-color: #C49AC8; background-color: #2E2C26">
+    <div style="position:relative;width:100%;aspect-ratio:16/10;border-radius:10px;overflow:hidden;border:1px solid #e0d0e8;background:#fff">
+      <img src="assets/sclider-demo-1.png" alt="scLIDER UMAP output" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;animation:sclider-fade-0 20s infinite">
+      <img src="assets/sclider-demo-2.png" alt="scLIDER t-SNE output" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;animation:sclider-fade-1 20s infinite">
+      <img src="assets/sclider-demo-3.png" alt="scLIDER UMAP output, higher resolution" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;animation:sclider-fade-2 20s infinite">
+      <img src="assets/sclider-demo-4.png" alt="scLIDER UMAP output variant" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;animation:sclider-fade-3 20s infinite">
+      <img src="assets/sclider-demo-5.png" alt="scLIDER UMAP output variant" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;animation:sclider-fade-4 20s infinite">
+    </div>
+    <div style="color:#8a897f">
+      <div style="font: 600 11px ui-monospace,monospace; color: #CDAFD0; margin-bottom: 10px">scLIDER 2.0</div>
+      <h3 style="font: 800 26px/1.15 Inter,sans-serif; margin: 0 0 14px; color: #FAF9F5EB">Interactive scRNA-seq analysis made easy.</h3>
+      <p style="font: 400 14px/1.65 Inter,sans-serif; color: #CDAFD0; margin: 0 0 14px">Go from a counts matrix to UMAP/t-SNE in just a few clicks with an interactive interface for visualizing single-cell RNA sequencing data. Sliders with pre-configured defaults and bounded input ranges for tunable parameters lets you focus on exploring key analytical decisions without wrestling tutorials or code.&nbsp;</p><p style="font: 400 14px/1.65 Inter,sans-serif; color: #CDAFD0; margin: 0 0 14px">The original version was written in Go and included Seurat validation scripts in R with an RShiny interface. While Go was ideal for learning low-level pipeline mechanics, Python/Scanpy allows for an enhanced user experience.&nbsp;</p>
+      
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;font:500 11px ui-monospace,monospace;color:#9b7b9e">
+        <span style="border:1px solid #999;padding:3px 8px;border-radius:3px">python</span><span style="border:1px solid #999;padding:3px 8px;border-radius:3px">go</span><span style="border:1px solid #999;padding:3px 8px;border-radius:3px">r / rshiny</span><span style="border:1px solid #999;padding:3px 8px;border-radius:3px">seurat</span><span style="border:1px solid #999;padding:3px 8px;border-radius:3px">scanpy</span>
+        <span style="border:1px solid #999;padding:3px 8px;border-radius:3px">scrna-seq</span>
+        
+      </div>
+      
+      <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
+        <a href="scLIDER Writeup.dc.html" style="font: 700 13px Inter,sans-serif; color: #FAF9F5EB; border-bottom: 2px solid #9b7b9e; padding-bottom: 2px">read more →</a>
+        <a href="https://github.com/umehina/scrna_project" style="font: 700 13px Inter,sans-serif; color: #FAF9F5EB; border-bottom: 2px solid #9b7b9e; padding-bottom: 2px">code (v1) →</a><a href="https://github.com/halimv/scLIDER" style="font: 700 13px Inter,sans-serif; color: #FAF9F5EB; border-bottom: 2px solid #9b7b9e; padding-bottom: 2px">code (v2) →</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding: 32px; margin-top: 24px; border: 1px solid #C49AC8; border-radius: 8px; background-color: #2E2C26">
+    <div style="width:100%;aspect-ratio:16/10;border-radius:10px;overflow:hidden;background:#fff">
+      <img src="assets/battleship-demo.gif" alt="OT2 robot probing Battleship board" style="width: 100%; height: 100%; object-fit: fill">
+    </div>
+    <div style="color:#8a897f">
+      <div style="font: 600 11px ui-monospace,monospace; color: #CDAFD0; margin-bottom: 10px">CLOSED-LOOP BATTLESHIP</div>
+      <h3 style="font: 800 26px/1.15 Inter,sans-serif; margin: 0 0 14px; color: #FAF9F5EB">Play battleship on a liquid handler.</h3>
+      <p style="font: 400 14px/1.65 Inter,sans-serif; color: #CDAFD0; margin: 0 0 14px"><span style="color: #CDAFD0; font: 400 14px/1.65 Inter,sans-serif; margin: 0 0 14px">An autonomous, closed-loop robotic system that plays Battleship using chemical color indicators and computer vision. When the system queries a position, a pH-sensitive reagent reveals a hit or miss through a color change. An onboard camera captures the grid, a computer vision algorithm samples RGB values to evaluate the outcome, and a hunt-target heuristic automatically determines the next strategic coordinate.</span><br></p>
+      
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;font:500 11px ui-monospace,monospace;color:#9b7b9e">
+        <span style="border:1px solid #999;padding:3px 8px;border-radius:3px">ot2 / http</span>
+        <span style="border:1px solid #999;padding:3px 8px;border-radius:3px">closed-loop system</span>
+        <span style="border:1px solid #999;padding:3px 8px;border-radius:3px">robotics</span>
+      </div>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
+        <a href="OT2_Battleship.dc.html#" style="font: 700 13px Inter,sans-serif; color: #FAF9F5EB; border-bottom: 2px solid #9b7b9e; padding-bottom: 2px">read more →</a>
+        <a href="https://github.com/shellwork/BaiTu" style="font: 700 13px Inter,sans-serif; color: #FAF9F5EB; border-bottom: 2px solid #9b7b9e; padding-bottom: 2px">code / simulate →</a><a href="#" style="font: 700 13px Inter,sans-serif; color: #FAF9F5EB; border-bottom: 2px solid #9b7b9e; padding-bottom: 2px">watch a demo →</a>
+        
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding: 32px; margin-top: 24px; border: 1px solid #C49AC8; border-radius: 8px; background-color: #2E2C26">
+    <div style="width:100%;border-radius:10px;overflow:hidden;background:#151922;display:flex">
+      <img src="assets/battlesat-demo.gif" alt="BattleSAT solver recovering a Battleship board" style="width:100%;height:auto;display:block">
+    </div>
+    <div style="color:#8a897f">
+      <div style="font: 600 11px ui-monospace,monospace; color: #CDAFD0; margin-bottom: 10px">BATTLE_SAT</div>
+      <h3 style="font: 800 26px/1.15 Inter,sans-serif; margin: 0 0 14px; color: #FAF9F5EB">Can we detect experimental 'lies' and recover ground-truth?&nbsp;</h3>
+      <p style="font: 400 14px/1.65 Inter,sans-serif; color: #CDAFD0; margin: 0 0 14px">A Z3 solver that reconstructs ground-truth Battleship boards from noisy experimental readings. Constraints encode ship geometry and measurement error, so the solver returns the boards consistent with what the instrument actually saw.</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;font:500 11px ui-monospace,monospace;color:#9b7b9e">
+        <span style="border:1px solid #999;padding:3px 8px;border-radius:3px">python</span>
+        <span style="border:1px solid #999;padding:3px 8px;border-radius:3px">z3-solver</span>
+        <span style="border:1px solid #999;padding:3px 8px;border-radius:3px">smt / constraints</span>
+      </div>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
+        <a href="BattleSAT Writeup.dc.html" style="font: 700 13px Inter,sans-serif; color: #FAF9F5EB; border-bottom: 2px solid #9b7b9e; padding-bottom: 2px">read more →</a><a href="https://github.com/CMU-PRISM-LAB/BattleSAT" style="font: 700 13px Inter,sans-serif; color: #FAF9F5EB; border-bottom: 2px solid #9b7b9e; padding-bottom: 2px">code →</a>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+
+<div style="padding: 48px 0; border-bottom: 1px solid #e4e4e4">
+  
+  <div style="font: 800 26px/1.15 Inter,sans-serif; color: #2E2C26; margin: 0 0 14px">Adaptable Scientific Communication for Interdisciplinary Teams</div><p style="font: 400 14px/1.6 Inter,sans-serif; color: #2E2C26; margin: 0 0 22px">While scLIDER automates the scRNA-seq pipeline up to UMAP and clustering, cell-type annotation remains a highly researcher-dependent process. This validation study dives into the annotation logic of Doke et. al's 2022 study, which discovers a novel profibrotic Proximal Tubule cell type implicated in the profibrotic cascade.&nbsp;The accompanying documentation pairs a rigorous technical paper with an engaging presentation deck designed to break down dense complex scientific concepts into intuitive, visual takeaways for any audience.&nbsp;</p>
+  <div style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent)">
+    <div class="doke-marquee-track" style="display:flex;gap:16px;height:420px;width:max-content;animation:doke-marquee 60s linear infinite">
+      <div style="display:flex;gap:16px;height:100%">
+        <img src="assets/doke-report/page-01.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 1">
+        <img src="assets/doke-report/page-02.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 2">
+        
+        <img src="assets/doke-report/page-03.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 3"><img src="assets/doke-report/page-04.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 4">
+        <img src="assets/doke-report/page-05.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 5">
+        <img src="assets/doke-report/page-06.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 6">
+        <img src="assets/doke-report/page-07.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 7">
+        <img src="assets/doke-report/page-08.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 8">
+        <img src="assets/doke-report/page-09.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 9">
+        <img src="assets/doke-report/page-10.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 10">
+        <img src="assets/doke-report/page-11.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 11">
+        <img src="assets/doke-report/page-12.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 12">
+        <img src="assets/doke-report/page-13.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 13">
+        <img src="assets/doke-report/page-14.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 14">
+        <img src="assets/doke-report/page-15.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 15">
+        <img src="assets/doke-report/page-16.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 16">
+        <img src="assets/doke-report/page-17.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 17">
+        <img src="assets/doke-report/page-18.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 18">
+        <img src="assets/doke-report/page-19.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 19">
+        <img src="assets/doke-report/page-20.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 20">
+        <img src="assets/doke-report/page-21.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 21">
+        <img src="assets/doke-report/page-22.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 22">
+        <img src="assets/doke-report/page-23.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 23">
+        <img src="assets/doke-report/page-24.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 24">
+        <img src="assets/doke-report/page-25.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 25">
+      </div>
+      <div style="display:flex;gap:16px;height:100%">
+        <img src="assets/doke-report/page-01.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 1">
+        <img src="assets/doke-report/page-02.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 2">
+        <img src="assets/doke-report/page-03.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 3">
+        <img src="assets/doke-report/page-04.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 4">
+        <img src="assets/doke-report/page-05.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 5">
+        <img src="assets/doke-report/page-06.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 6">
+        <img src="assets/doke-report/page-07.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 7">
+        <img src="assets/doke-report/page-08.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 8">
+        <img src="assets/doke-report/page-09.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 9">
+        <img src="assets/doke-report/page-10.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 10">
+        <img src="assets/doke-report/page-11.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 11">
+        <img src="assets/doke-report/page-12.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 12">
+        <img src="assets/doke-report/page-13.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 13">
+        <img src="assets/doke-report/page-14.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 14">
+        <img src="assets/doke-report/page-15.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 15">
+        <img src="assets/doke-report/page-16.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 16">
+        <img src="assets/doke-report/page-17.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 17">
+        <img src="assets/doke-report/page-18.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 18">
+        <img src="assets/doke-report/page-19.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 19">
+        <img src="assets/doke-report/page-20.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 20">
+        <img src="assets/doke-report/page-21.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 21">
+        <img src="assets/doke-report/page-22.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 22">
+        <img src="assets/doke-report/page-23.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 23">
+        <img src="assets/doke-report/page-24.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 24">
+        <img src="assets/doke-report/page-25.png" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="Doke et al. validation report, page 25">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="communication" style="padding:48px 0;border-bottom:1px solid #e4e4e4;scroll-margin-top:20px">
+  
+  
+  <div style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent);margin-bottom:32px">
+    <div class="doke-marquee-track" style="display:flex;gap:16px;height:280px;width:max-content;animation:doke-marquee 90s linear infinite">
+      <div style="display:flex;gap:16px;height:100%">
+        <img src="uploads/ckd group1 presentation (modified)_page-0001.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 1">
+        <img src="uploads/ckd group1 presentation (modified)_page-0002.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 2">
+        <img src="uploads/ckd group1 presentation (modified)_page-0003.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 3">
+        <img src="uploads/ckd group1 presentation (modified)_page-0004.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 4">
+        <img src="uploads/ckd group1 presentation (modified)_page-0005.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 5">
+        <img src="uploads/ckd group1 presentation (modified)_page-0006.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 6">
+        <img src="uploads/ckd group1 presentation (modified)_page-0007.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 7">
+        <img src="uploads/ckd group1 presentation (modified)_page-0008.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 8">
+        <img src="uploads/ckd group1 presentation (modified)_page-0009.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 9">
+        <img src="uploads/ckd group1 presentation (modified)_page-0010.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 10">
+        <img src="uploads/ckd group1 presentation (modified)_page-0011.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 11">
+        <img src="uploads/ckd group1 presentation (modified)_page-0012.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 12">
+        <img src="uploads/ckd group1 presentation (modified)_page-0013.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 13">
+        <img src="uploads/ckd group1 presentation (modified)_page-0014.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 14">
+        <img src="uploads/ckd group1 presentation (modified)_page-0015.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 15">
+        <img src="uploads/ckd group1 presentation (modified)_page-0016.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 16">
+        <img src="uploads/ckd group1 presentation (modified)_page-0017.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 17">
+        <img src="uploads/ckd group1 presentation (modified)_page-0018.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 18">
+        <img src="uploads/ckd group1 presentation (modified)_page-0019.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 19">
+        <img src="uploads/ckd group1 presentation (modified)_page-0020.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 20">
+        <img src="uploads/ckd group1 presentation (modified)_page-0021.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 21">
+        <img src="uploads/ckd group1 presentation (modified)_page-0022.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 22">
+        <img src="uploads/ckd group1 presentation (modified)_page-0023.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 23">
+        <img src="uploads/ckd group1 presentation (modified)_page-0024.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 24">
+        <img src="uploads/ckd group1 presentation (modified)_page-0025.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 25">
+        <img src="uploads/ckd group1 presentation (modified)_page-0026.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 26">
+        <img src="uploads/ckd group1 presentation (modified)_page-0027.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 27">
+        <img src="uploads/ckd group1 presentation (modified)_page-0028.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 28">
+        <img src="uploads/ckd group1 presentation (modified)_page-0029.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 29">
+        <img src="uploads/ckd group1 presentation (modified)_page-0030.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 30">
+        <img src="uploads/ckd group1 presentation (modified)_page-0031.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 31">
+        <img src="uploads/ckd group1 presentation (modified)_page-0034.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 34">
+        <img src="uploads/ckd group1 presentation (modified)_page-0035.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 35">
+        <img src="uploads/ckd group1 presentation (modified)_page-0041.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 41">
+        <img src="uploads/ckd group1 presentation (modified)_page-0042.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 42">
+        <img src="uploads/ckd group1 presentation (modified)_page-0043.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 43">
+        <img src="uploads/ckd group1 presentation (modified)_page-0044.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 44">
+        <img src="uploads/ckd group1 presentation (modified)_page-0046.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 46">
+        <img src="uploads/ckd group1 presentation (modified)_page-0048.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 48">
+        <img src="uploads/ckd group1 presentation (modified)_page-0049.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 49">
+        <img src="uploads/ckd group1 presentation (modified)_page-0051.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 51">
+      </div>
+      <div style="display:flex;gap:16px;height:100%">
+        <img src="uploads/ckd group1 presentation (modified)_page-0001.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 1">
+        <img src="uploads/ckd group1 presentation (modified)_page-0002.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 2">
+        <img src="uploads/ckd group1 presentation (modified)_page-0003.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 3">
+        <img src="uploads/ckd group1 presentation (modified)_page-0004.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 4">
+        <img src="uploads/ckd group1 presentation (modified)_page-0005.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 5">
+        <img src="uploads/ckd group1 presentation (modified)_page-0006.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 6">
+        <img src="uploads/ckd group1 presentation (modified)_page-0007.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 7">
+        <img src="uploads/ckd group1 presentation (modified)_page-0008.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 8">
+        <img src="uploads/ckd group1 presentation (modified)_page-0009.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 9">
+        <img src="uploads/ckd group1 presentation (modified)_page-0010.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 10">
+        <img src="uploads/ckd group1 presentation (modified)_page-0011.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 11">
+        <img src="uploads/ckd group1 presentation (modified)_page-0012.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 12">
+        <img src="uploads/ckd group1 presentation (modified)_page-0013.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 13">
+        <img src="uploads/ckd group1 presentation (modified)_page-0014.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 14">
+        <img src="uploads/ckd group1 presentation (modified)_page-0015.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 15">
+        <img src="uploads/ckd group1 presentation (modified)_page-0016.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 16">
+        <img src="uploads/ckd group1 presentation (modified)_page-0017.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 17">
+        <img src="uploads/ckd group1 presentation (modified)_page-0018.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 18">
+        <img src="uploads/ckd group1 presentation (modified)_page-0019.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 19">
+        <img src="uploads/ckd group1 presentation (modified)_page-0020.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 20">
+        <img src="uploads/ckd group1 presentation (modified)_page-0021.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 21">
+        <img src="uploads/ckd group1 presentation (modified)_page-0022.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 22">
+        <img src="uploads/ckd group1 presentation (modified)_page-0023.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 23">
+        <img src="uploads/ckd group1 presentation (modified)_page-0024.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 24">
+        <img src="uploads/ckd group1 presentation (modified)_page-0025.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 25">
+        <img src="uploads/ckd group1 presentation (modified)_page-0026.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 26">
+        <img src="uploads/ckd group1 presentation (modified)_page-0027.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 27">
+        <img src="uploads/ckd group1 presentation (modified)_page-0028.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 28">
+        <img src="uploads/ckd group1 presentation (modified)_page-0029.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 29">
+        <img src="uploads/ckd group1 presentation (modified)_page-0030.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 30">
+        <img src="uploads/ckd group1 presentation (modified)_page-0031.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 31">
+        <img src="uploads/ckd group1 presentation (modified)_page-0034.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 34">
+        <img src="uploads/ckd group1 presentation (modified)_page-0035.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 35">
+        <img src="uploads/ckd group1 presentation (modified)_page-0041.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 41">
+        <img src="uploads/ckd group1 presentation (modified)_page-0042.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 42">
+        <img src="uploads/ckd group1 presentation (modified)_page-0043.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 43">
+        <img src="uploads/ckd group1 presentation (modified)_page-0044.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 44">
+        <img src="uploads/ckd group1 presentation (modified)_page-0046.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 46">
+        <img src="uploads/ckd group1 presentation (modified)_page-0048.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 48">
+        <img src="uploads/ckd group1 presentation (modified)_page-0049.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 49">
+        <img src="uploads/ckd group1 presentation (modified)_page-0051.jpg" style="height:100%;flex:0 0 auto;border-radius:4px;border:1px solid #e0d0e8;box-shadow:0 2px 8px rgba(0,0,0,.06)" alt="CKD presentation, page 51">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div id="contact" style="padding:36px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;scroll-margin-top:20px">
+  <span style="font:500 12px ui-monospace,monospace;color:#a9a9a0">© 2026 Vania Halim</span>
+  <span style="display:flex;gap:18px;font:600 12px ui-monospace,monospace">
+    <a href="https://github.com/halimv">github</a>
+    <a href="https://www.linkedin.com/in/vaniahalim/">linkedin</a>
+    <a href="mailto:vania@example.com">email</a>
+  </span>
+</div>
+</div></x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const layoutVariant = this.props.layoutVariant ?? "Asymmetric (featured projects side-by-side)";
+    const accentPalette = this.props.accentPalette ?? "Mauve (current)";
+    const typographyMood = this.props.typographyMood ?? "Technical (monospace headers)";
+
+    const accentColors = {
+      "Mauve (current)": "#9b7b9e",
+      "Deep teal": "#2d5a5a",
+      "Warm terracotta": "#c4522e",
+      "Sage green": "#7a9a80"
+    };
+
+    const typeFamilies = {
+      "Technical (monospace headers)": { heading: "ui-monospace,monospace", body: "Inter,system-ui,sans-serif" },
+      "Editorial (serif)": { heading: "'Playfair Display',serif", body: "'Lora',serif" },
+      "Minimal (sans-serif clean)": { heading: "Inter,system-ui,sans-serif", body: "Inter,system-ui,sans-serif" }
+    };
+
+    return {
+      accent: accentColors[accentPalette],
+      typeHeading: typeFamilies[typographyMood].heading,
+      typeBody: typeFamilies[typographyMood].body,
+      layoutVariant,
+      accentPalette,
+      typographyMood
+    };
+  }
+}
+</script>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: &quot;100%&quot;, &quot;height&quot;: &quot;100vh&quot;},
+  &quot;layoutVariant&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [&quot;Asymmetric (featured projects side-by-side)&quot;, &quot;Stacked (full-width sections)&quot;, &quot;Masonry (responsive grid)&quot;],
+    &quot;default&quot;: &quot;Asymmetric (featured projects side-by-side)&quot;,
+    &quot;section&quot;: &quot;Layout&quot;
+  },
+  &quot;accentPalette&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [&quot;Mauve (current)&quot;, &quot;Deep teal&quot;, &quot;Warm terracotta&quot;, &quot;Sage green&quot;],
+    &quot;default&quot;: &quot;Mauve (current)&quot;,
+    &quot;section&quot;: &quot;Color&quot;
+  },
+  &quot;typographyMood&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [&quot;Technical (monospace headers)&quot;, &quot;Editorial (serif)&quot;, &quot;Minimal (sans-serif clean)&quot;],
+    &quot;default&quot;: &quot;Technical (monospace headers)&quot;,
+    &quot;section&quot;: &quot;Typography&quot;
+  }
+}"></script>
+</body>
+</html>
