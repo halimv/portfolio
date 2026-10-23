@@ -32,9 +32,8 @@ a:hover{color:#a3160d;text-decoration:underline}
 
   
 
-  <div style="margin-bottom:24px">
-    <img src="https://mccarrolllab.org/wp-content/uploads/2015/05/Substack-4455-4504.gif" style="width:100%;border-radius:8px;border:1px solid #e4e4e4;display:block" alt="Drop-seq single-cell capture, McCarroll Lab">
-    <div style="font:400 11px ui-monospace,monospace;color:#999;margin-top:8px">Image credit: <a href="https://mccarrolllab.org/dropseq/" style="color: #8B5890">McCarroll Lab, Drop-seq</a></div>
+  <div style="position:relative;width:100%;aspect-ratio:3024/1788;margin-bottom:24px;border-radius:8px;overflow:hidden;border:1px solid #e4e4e4;background:#fff">
+    <video src="assets/scLIDER_longer_demo.mp4" autoplay="true" muted="true" loop="true" playsinline="true" preload="auto" aria-label="scLIDER dashboard demo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain"></video>
   </div>
 
   <section style="margin-bottom:44px">
@@ -78,8 +77,8 @@ a:hover{color:#a3160d;text-decoration:underline}
   
 
   <section style="margin-bottom:44px">
-    <div style="font: 600 11px ui-monospace,monospace; color: #8B5890; margin-bottom: 12px; font-family: Inter, sans-serif; font-size: 18px;a">07 — validating against Seurat</div>
-    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px"><span style="color: #333; font: 400 15px/1.75 Inter,sans-serif; margin: 0 0 14px">To validate our Go engine, we benchmarked our output against standard Seurat results using t-SNE and UMAP visualizations.&nbsp;<span data-path-to-node="0,2">While the layouts aren't identical due to Go’s limitations with complex visualization libraries, both pipelines recover roughly the same number of distinct cell clusters and capture consistent overall cell populations</span><span data-path-to-node="0,3"><response-element class="no-md" ng-version="0.0.0-PLACEHOLDER"><source-footnote _nghost-ng-c2967161888="" class="ng-star-inserted"><sup _ngcontent-ng-c2967161888="" class="superscript"></sup></source-footnote></response-element></span><span data-path-to-node="0,4">. These minor spatial differences stem from simplified implementation choices in our custom UMAP engine, but the underlying community structure remains remarkably well-preserved</span></span></p>
+    <div style="font: 600 11px ui-monospace,monospace; color: #8B5890; margin-bottom: 12px; font-family: Inter, sans-serif; font-size: 18px">07 — validating against Seurat</div>
+    <p style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px"><span style="color: #333; font: 400 15px/1.75 Inter,sans-serif; margin: 0 0 14px">To validate our Go engine, we benchmarked our output against standard Seurat results using t-SNE and UMAP visualizations.&nbsp;<span data-path-to-node="0,2">While the layouts aren't identical due to Go’s limitations with complex visualization libraries, both pipelines recover roughly the same number of distinct cell clusters and capture consistent overall cell populations</span><span data-path-to-node="0,4">. These minor spatial differences stem from simplified implementation choices in our custom UMAP engine, but the underlying community structure remains remarkably well-preserved</span></span></p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;height:380px">
       <img src="./uploads/embedding_tsne.png" style="width:100%;height:100%;object-fit:contain;border:1px solid #e4e4e4;border-radius:8px" alt="t-SNE embedding with Leiden clusters">
       <img src="./uploads/embedding_umap.png" style="width:100%;height:100%;object-fit:contain;border:1px solid #e4e4e4;border-radius:8px" alt="UMAP embedding with Leiden clusters">
@@ -88,8 +87,7 @@ a:hover{color:#a3160d;text-decoration:underline}
 
   <section style="margin-bottom:44px">
     <div style="font: 600 11px ui-monospace,monospace; color: #8B5890; margin-bottom: 12px; font-family: Inter, sans-serif; font-size: 18px">08 — what's next</div>
-    <div style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px"><div _ngcontent-ng-c3353471106="" inline-copy-host="" class="markdown markdown-main-panel md-content enable-luminous-fast-follows enable-updated-hr-color tutor-markdown-rendering" id="model-response-message-contentr_18d58b82d0b52883" aria-busy="false" aria-live="polite" dir="ltr" style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-family: &quot;Google Sans Text&quot;, sans-serif !important; line-height: 1.15 !important; margin-top: 0px !important; margin-left: 0px !important; margin-right: 0px !important;"><div style="font: 400 15px/1.75 Inter,sans-serif; color: #333; margin: 0">Building scLIDER in Go was an invaluable exercise for mastering the core algorithms from first principles. However, Python provides access to mature libraries for non-linear embeddings like UMAP and t-SNE. To deliver higher visualization fidelity and a seamless dashboard experience, I later independently rebuilt scLIDER using Python and scanpy. All code is available on GitHub.&nbsp;</div></div></div>
-    <img src="./uploads/scLIDER_frontend.png" style="width:100%;margin-top:20px;border-radius:8px;border:1px solid #e4e4e4;display:block" alt="scLIDER v2.0 frontend interface">
+    <div style="font:400 15px/1.75 Inter,sans-serif;color:#333;margin:0 0 14px"><div style="font: 400 15px/1.75 Inter,sans-serif; color: #333; margin: 0">Building scLIDER in Go was an invaluable exercise for mastering the core algorithms from first principles. However, Python provides access to mature libraries for non-linear embeddings like UMAP and t-SNE. To deliver higher visualization fidelity and a seamless dashboard experience, I later independently rebuilt scLIDER using Python and scanpy. All code is available on GitHub.&nbsp;</div></div>
   </section>
 
   <div style="display:flex;gap:20px;align-items:center;padding-top:20px;border-top:1px solid #e4e4e4;font:600 12px ui-monospace,monospace">
